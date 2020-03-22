@@ -1,0 +1,41 @@
+
+<div class="container-reports">
+  <!--filters-->
+  <mat-toolbar class="mat-item-toolbar">
+    <div *ngFor="let filter of allFilters">
+      <div [ngSwitch]="filter.Type">
+        <div *ngSwitchCase="'checkbox'">
+          <mat-checkbox class="mat-item-checkbox"
+                        (change)="applyFilter()"
+                        [(ngModel)]="filter.State">#{{filter.Tag}}
+          </mat-checkbox>
+        </div>
+        <div *ngSwitchCase="'text'">
+          <mat-form-field class="mat-item-text">
+            <mat-label>#</mat-label>
+            <input matInput [(ngModel)]="filter.Value"
+                            (ngModelChange)="applyFilter()">
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+    <button mat-raised-button color="primary" (click)="resetFilters()">reset filters</button>
+  </mat-toolbar>
+  <!--end-->
+
+  <!--reports-->
+  <div *ngFor="let report of reports | async " class="report-card">
+    <mat-card>
+      <mat-card-header>
+        <div mat-card-avatar class="header-image"></div>
+        <mat-card-title>{{report.Author}}</mat-card-title>
+        <mat-card-subtitle>{{report.Type}} / {{report.Language}}</mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image src="{{report.imageUrl}}" alt="Photo of a Shiba Inu">
+      <mat-card-content>
+        <p>{{report.Description}}</p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <!--end-->
+</div>

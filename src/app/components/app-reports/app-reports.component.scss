@@ -1,0 +1,47 @@
+.header-image {
+  background: url('https://cs2.livemaster.ru/storage/fe/b3/dadd30469ad07e45cfcaae477e79--kukly-i-igrushki-bolshoj-uh.jpg');
+}
+
+.container-reports {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background-color: #c0c0c014;
+  padding: 30px;
+}
+
+.report-card {
+  width: 300px;
+  margin: 30px;
+}
+
+.mat-checkbox-frame {
+  background-color: green;
+}
+
+.input-headline {
+  font-size: 28px;
+  line-height: 32px;
+  font-weight: 400;
+}
+
+.mat-item-text {
+  font-size: 12px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.mat-item-checkbox {
+  color: brown;
+  margin: 5px;
+}
+
+.mat-item-toolbar {
+  background-color: white;
+  color: black;
+  height: fit-content;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 5px;
+}
